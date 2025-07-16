@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from collectors.rss_collector import collect_rss_feeds
 from transformers.data_transformer import transform_data
 from storage.google_sheets_storage import save_to_google_sheets

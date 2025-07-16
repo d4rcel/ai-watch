@@ -1,14 +1,14 @@
 import feedparser
-from config import RSS_FEEDS
+from config import Config
 
 
 # Collect articles from RSS feeds
 def collect_rss_feeds():
     articles = []
-    for url in RSS_FEEDS:
+    for url in Config.RSS_FEEDS:
         if not url:
             continue
-        feed = feedparser.parse(url)
+        feed = feedparser.parse(url.strip())
         for entry in feed.entries:
             articles.append({
                 'title': entry.title,

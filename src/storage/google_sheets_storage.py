@@ -1,14 +1,14 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from config import GOOGLE_APPLICATION_CREDENTIALS, SPREADSHEET_KEY, GOOGLE_SHEET_NAME
+from config import Config
 
 def get_google_sheets_client():
     
     print("Connecting to google sheets...")
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name(GOOGLE_APPLICATION_CREDENTIALS, scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name(Config.GOOGLE_APPLICATION_CREDENTIALS, scope)
     client = gspread.authorize(creds)
-    sheet = client.open_by_key(SPREADSHEET_KEY).worksheet(GOOGLE_SHEET_NAME)
+    sheet = client.open_by_key(Config.SPREADSHEET_KEY).worksheet(Config.GOOGLE_SHEET_NAME)
     return sheet
 
 
