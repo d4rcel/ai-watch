@@ -2,7 +2,7 @@ import feedparser
 from config import RSS_FEEDS
 
 
-# Collect modules from RSS feeds
+# Collect articles from RSS feeds
 def collect_rss_feeds():
     articles = []
     for url in RSS_FEEDS:
