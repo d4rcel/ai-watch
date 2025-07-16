@@ -1,13 +1,8 @@
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from collectors.rss_collector import collect_rss_feeds
-from transformers.data_transformer import transform_data
-from storage.google_sheets_storage import save_to_google_sheets
+from src.collectors.rss_collector import collect_rss_feeds
+from src.transformers.data_transformer import transform_data
+from src.storage.google_sheets_storage import save_to_google_sheets
 
 def run():
-    """Runs the complete data collection and storage process."""
     print("Starting the AI watch agent...")
     articles = collect_rss_feeds()
     if articles:
@@ -18,6 +13,3 @@ def run():
     else:
         print("No new articles found.")
     print("AI watch agent finished.")
-
-if __name__ == "__main__":
-    run()
