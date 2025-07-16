@@ -3,17 +3,28 @@ import datetime
 
 def transform_data(articles):
     print("Transforming data :::")
+    
+    if not articles:
+        print("No articles to convert")
+        return []
+    
     transformed_articles = []
     for article in articles:
-        transformed_articles.append({
+        try:
+            transformed_articles.append({
             'id': hashlib.sha256(article['url'].encode()).hexdigest(),
-            'source': article['source'],
-            'title': article['title'],
-            'url': article['url'],
-            'summary': article['summary'],
-            'publication_date': article['publication_date'],
+            'source': article.get('source', 'Source inconnue'),
+            'title': article.get('title', 'itre non disponible'),
+            'url': article.get('url', ''),
+            'summary': article.get('summary', 'Résumé non disponible'),
+            'publication_date': article.get('publication_date', ''),
             'collection_date': datetime.datetime.now().isoformat(),
             'tags': ''
         })
+            
+        except Exception as e:
+            print(f"Error when transforming an article: {e}")
+            continue
+    print("Transforming data END :::")
         
     return transformed_articles
