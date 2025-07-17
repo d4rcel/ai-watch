@@ -18,9 +18,9 @@ def collect_rss_feeds():
             
             for entry in feed.entries:
                 try:
-                    title = getattr(entry, 'title', 'Titre non disponible')
-                    link = getattr(entry, 'link', '')
-                    summary = getattr(entry, 'summary', 'Résumé non disponible')
+                    title = entry.get('title', 'Titre non disponible')
+                    link = entry.get('link', '')
+                    summary = entry.get('summary', 'Résumé non disponible')
                     published = entry.get('published', '')
                     
                     # Vérifier si le flux a un titre
