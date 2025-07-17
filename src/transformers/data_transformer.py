@@ -2,7 +2,6 @@ import hashlib
 import datetime
 
 def transform_data(articles):
-    print("Transforming data :::")
     
     if not articles:
         print("No articles to convert")
@@ -25,6 +24,5 @@ def transform_data(articles):
         except Exception as e:
             print(f"Error when transforming an article: {e}")
             continue
-    print("Transforming data END :::")
         
     return transformed_articles

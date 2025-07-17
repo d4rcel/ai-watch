@@ -5,11 +5,17 @@ from config import Config
 def get_google_sheets_client():
     
     print("Connecting to google sheets...")
-    scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name(Config.GOOGLE_APPLICATION_CREDENTIALS, scope)
-    client = gspread.authorize(creds)
-    sheet = client.open_by_key(Config.SPREADSHEET_KEY).worksheet(Config.GOOGLE_SHEET_NAME)
-    return sheet
+    try:
+        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+        creds = ServiceAccountCredentials.from_json_keyfile_name(Config.GOOGLE_APPLICATION_CREDENTIALS, scope)
+        client = gspread.authorize(creds)
+        sheet = client.open_by_key(Config.SPREADSHEET_KEY).worksheet(Config.GOOGLE_SHEET_NAME)
+        return sheet
+        
+    except Exception as e:
+        print(f"Error connecting to Google Sheets: {e}")
+        raise
+    
 
 
 def save_to_google_sheets(articles):

@@ -14,3 +14,4 @@ class Config:
     SPREADSHEET_KEY = env.get("SPREADSHEET_KEY")
 
     RSS_FEEDS = env.get("RSS_FEEDS", "").split(',')
+    REFRESH_INTERVAL_MINUTES = int(env.get("REFRESH_INTERVAL_MINUTES", 3))
