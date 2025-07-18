@@ -36,7 +36,7 @@ pip install -r requirements.txt
 
 1. **Obtenir les identifiants Google Cloud**
    - Télécharger le fichier json des identifiants [Identifiants JSON](https://drive.google.com/drive/folders/17Qz_00bfaZntsoe33S4Pk8ssUG5ZWkrl?usp=sharing).
-   - Placer le fichier téléchargé, `veille-ia-466020-2ab42092bf21.json` à la racine du projet
+   - Placer le fichier téléchargé, "`veille-ia-466020-2ab42092bf21.json`" à la racine du projet
    - Ouvrir le [Google Sheet](https://docs.google.com/spreadsheets/d/1QbA7u_hplBiYBRf4MW-KR-2Onh32PVqdh-s0DRoqBhc/edit?usp=sharing) qui stockera les données (Il est vide par défaut)
    
 
