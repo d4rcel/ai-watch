@@ -35,17 +35,15 @@ pip install -r requirements.txt
 ## Configuration
 
 1. **Obtenir les identifiants Google Cloud**
-   - Télécharger le fichier json des identifiants [Identifiants JSON](https://drive.google.com/file/d/1b5xv_b61I2ZagqSrtjR2m42O-K9v64Fz/view?usp=sharing).
+   - Télécharger le fichier json des identifiants [Identifiants JSON](https://drive.google.com/drive/folders/17Qz_00bfaZntsoe33S4Pk8ssUG5ZWkrl?usp=sharing).
    - Placer le fichier téléchargé, "veille-ia-466020-2ab42092bf21.json" à la racine du projet
+   - Ouvrir le [Google Sheet](https://docs.google.com/spreadsheets/d/1QbA7u_hplBiYBRf4MW-KR-2Onh32PVqdh-s0DRoqBhc/edit?usp=sharing) qui stockera les données (Il est vide par défaut)
    
 
 2. **Configurer les variables d'environnement**
    - Créer le fichier `.env` à la racine du projet
    - Copiez l'entièreté du fichier `.env.example` dans le fichier `.env` :
-     ```bash
-     cp .env.example .env
-     ```
-   - Vous y retrouverez:
+    
    ```bash
      GOOGLE_APPLICATION_CREDENTIALS : Chemin vers le fichier JSON d\'identifiants.
      GOOGLE_SHEET_NAME : Nom de la feuille Google Sheets.
@@ -89,6 +87,13 @@ Le script va :
 3. **Stockage** : Insertion dans Google Sheets
 4. **Automatisation** : Boucle de veille à intervalle régulier
 
+## Tests
+
+Des tests unitaires sont disponibles dans le dossier `tests/` pour valider les principaux modules du projet (collecte RSS, transformation des données, stockage Google Sheets). Vous pouvez les exécuter avec :
+
+```bash
+python -m unittest discover tests
+```
 
 ## Procédé
 
@@ -113,4 +118,3 @@ Le script va :
 - Déployer le projet sur un serveur ou via Docker pour une exécution continue.
 - Ajouter la gestion des logs et une meilleure gestion des erreurs.
 
----
