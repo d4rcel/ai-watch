@@ -22,19 +22,17 @@ def run():
                     print("Stop requested by user. Exiting...")
                     break
             except Exception as e:
-                print(f"Erreur inattendue dans la boucle principale: {e}")
-                print("Le processus va continuer malgré cette erreur...")
-                
+                print(f"Something went wrong: {e}")                
                 
                 
             print(f"Waiting {Config.REFRESH_INTERVAL_MINUTES} minutes before the next run...")
             try:
                 time.sleep(Config.REFRESH_INTERVAL_MINUTES * 60)
             except KeyboardInterrupt:
-                print("\nArrêt demandé par l'utilisateur.")
+                print("\nStop requested by user.")
                 break
             
     except KeyboardInterrupt:
-        print("\nArrêt définitif du programme.")
+        print("\nFinal program termination.")
     except Exception as e:
-        print(f"Erreur critique qui force l'arrêt du programme: {e}")
+        print(f"Something went wrong: {e}")

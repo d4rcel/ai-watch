@@ -1,6 +1,6 @@
 import feedparser
 from config import Config
-
+from bs4 import BeautifulSoup
 
 # Collect articles from RSS feeds
 def collect_rss_feeds():
@@ -20,7 +20,9 @@ def collect_rss_feeds():
                 try:
                     title = entry.get('title', 'Titre non disponible')
                     link = entry.get('link', '')
-                    summary = entry.get('summary', 'Résumé non disponible')
+                    summary_raw = entry.get('summary', 'Résumé non disponible')
+                    
+                    summary = BeautifulSoup(summary_raw, "html.parser").get_text()
                     published = entry.get('published', '')
                     
                     # Vérifier si le flux a un titre

@@ -10,6 +10,7 @@ def get_google_sheets_client():
         creds = ServiceAccountCredentials.from_json_keyfile_name(Config.GOOGLE_APPLICATION_CREDENTIALS, scope)
         client = gspread.authorize(creds)
         sheet = client.open_by_key(Config.SPREADSHEET_KEY).worksheet(Config.GOOGLE_SHEET_NAME)
+        print("Inserting in google sheets...")
         return sheet
         
     except Exception as e:
