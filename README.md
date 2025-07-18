@@ -15,7 +15,7 @@
 1. **Cloner le dépôt**
 
 ```bash
-git clone <url-du-repo>
+git clone https://github.com/d4rcel/ai-watch.git
 cd ai-watch
 ```
 
