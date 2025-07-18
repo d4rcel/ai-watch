@@ -43,7 +43,10 @@ pip install -r requirements.txt
 2. **Configurer les variables d'environnement**
    - Créer le fichier `.env` à la racine du projet
    - Copiez l'entièreté du fichier `.env.example` dans le fichier `.env` :
-    
+     ```bash
+     cp .env.example .env
+     ```
+   - Vous y retrouverez:
    ```bash
      GOOGLE_APPLICATION_CREDENTIALS : Chemin vers le fichier JSON d\'identifiants.
      GOOGLE_SHEET_NAME : Nom de la feuille Google Sheets.
