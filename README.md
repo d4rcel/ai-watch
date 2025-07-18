@@ -63,7 +63,7 @@ pip install -r requirements.txt
 ## Lancement du projet
 
 ```bash
-python app.py
+python3 app.py
 ```
 
 Le script va :
@@ -95,7 +95,7 @@ Le script va :
 Des tests unitaires sont disponibles dans le dossier `tests/` pour valider les principaux modules du projet (collecte RSS, transformation des données, stockage Google Sheets). Vous pouvez les exécuter avec :
 
 ```bash
-python -m unittest discover tests
+python3 -m unittest discover tests
 ```
 
 ## Procédé
