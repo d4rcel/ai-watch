@@ -21,9 +21,18 @@ cd ai-watch
 
 2. **Créer et activer un environnement virtuel**
 
+- **Linux / MacOS**
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
+
+- **Windows**
+
+```cmd
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
 3. **Installer les dépendances**
@@ -62,8 +71,16 @@ pip install -r requirements.txt
 
 ## Lancement du projet
 
+- **Linux / MacOS**
+
 ```bash
 python3 app.py
+```
+
+- **Windows**
+
+```cmd
+python app.py
 ```
 
 Le script va :
@@ -91,11 +108,18 @@ Le script va :
 4. **Automatisation** : Boucle de veille à intervalle régulier
 
 ## Tests
-
 Des tests unitaires sont disponibles dans le dossier `tests/` pour valider les principaux modules du projet (collecte RSS, transformation des données, stockage Google Sheets). Vous pouvez les exécuter avec :
+
+- **Linux / MacOS**
 
 ```bash
 python3 -m unittest discover tests
+```
+
+- **Windows**
+
+```cmd
+python -m unittest discover tests
 ```
 
 ## Procédé
